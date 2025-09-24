@@ -1,0 +1,159 @@
+/* Landing Page Styles */
+
+/* Dark Technology Theme Background */
+.landing-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: 
+    /* Grid pattern overlay */
+    linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px),
+    linear-gradient(to right, rgba(59, 130, 246, 0.03) 1px, transparent 1px),
+    /* Main gradient background */
+    radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(16, 185, 129, 0.05) 0%, transparent 50%),
+    linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+  background-size:
+    50px 50px,
+    50px 50px,
+    cover,
+    cover,
+    cover,
+    cover;
+  background-position:
+    0 0,
+    0 0,
+    center,
+    center,
+    center,
+    center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ambient lighting effects */
+.landing-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 30% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 70% 80%, rgba(139, 92, 246, 0.06) 0%, transparent 40%);
+  pointer-events: none;
+  animation: ambientPulse 8s ease-in-out infinite alternate;
+}
+
+@keyframes ambientPulse {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+/* Update text colors for dark theme */
+.landing-page h1 {
+  color: #f8fafc !important;
+  text-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+.landing-page p {
+  color: #cbd5e1 !important;
+}
+
+/* Custom Button Styling */
+.custom-button {
+  /* Your original button variables */
+  --main-color: rgb(46, 213, 115);
+  --main-bg-color: rgba(46, 213, 116, 0.36);
+  --pattern-color: rgba(46, 213, 116, 0.073);
+
+  /* Your original filter */
+  filter: hue-rotate(0deg);
+
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  background: radial-gradient(
+      circle,
+      var(--main-bg-color) 0%,
+      rgba(0, 0, 0, 0) 95%
+    ),
+    linear-gradient(var(--pattern-color) 1px, transparent 1px),
+    linear-gradient(to right, var(--pattern-color) 1px, transparent 1px);
+  background-size:
+    cover,
+    15px 15px,
+    15px 15px;
+  background-position:
+    center center,
+    center center,
+    center center;
+  border-image: radial-gradient(
+      circle,
+      var(--main-color) 0%,
+      rgba(0, 0, 0, 0) 100%
+    )
+    1;
+  border-width: 1px 0 1px 0;
+  color: var(--main-color);
+  padding: 1rem 3rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+  transition: all 0.2s ease-in-out;
+  
+  /* Additional styling for better integration */
+  border-style: solid;
+  border-left: none;
+  border-right: none;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  z-index: 10;
+  
+  /* Subtle glow effect */
+  box-shadow: 
+    0 0 20px rgba(46, 213, 115, 0.2),
+    0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.custom-button:hover {
+  background-size:
+    cover,
+    10px 10px,
+    10px 10px;
+  
+  /* Enhanced hover effects */
+  transform: translateY(-2px);
+  box-shadow: 
+    0 0 30px rgba(46, 213, 115, 0.4),
+    0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.custom-button:active {
+  filter: hue-rotate(250deg);
+  transform: translateY(0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .custom-button {
+    font-size: 1.2rem;
+    padding: 0.8rem 2rem;
+    letter-spacing: 0.3rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .custom-button {
+    font-size: 1rem;
+    padding: 0.7rem 1.5rem;
+    letter-spacing: 0.2rem;
+  }
+}
